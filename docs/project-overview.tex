@@ -1,0 +1,55 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=1.7cm]{geometry}
+\usepackage{enumitem}\usepackage{titlesec}\usepackage[hidelinks]{hyperref}\usepackage{parskip}
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection}{0.6em}{}
+\titlespacing*{\section}{0pt}{6pt}{2pt}
+\setlist[itemize]{topsep=2pt,itemsep=1pt,parsep=0pt,leftmargin=1.3em}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+{\Large\bfseries FPGA Laboratory \textendash{} Verilog Designs (Experiments 1\textendash 5)}\\[2pt]
+{\large Combinational blocks, PicoBlaze, UART, ChipScope and a traffic-light FSM}\\[4pt]
+{\small FPGA laboratory course \textendash{} B.Sc. Electrical Engineering, Isfahan University of Technology}\\
+{\small Author: Kiavash Rabbani Soudabi (student ID 9821663) \textendash{} term 4012 (Fall 2022) \textendash{} individual work}
+\end{center}
+
+\section*{Purpose}
+Five laboratory experiments covering the hardware design flow from combinational logic up to in-system debugging:
+each one was designed in Verilog, constrained in a UCF file, synthesised and implemented with Xilinx ISE, and
+accompanied by a written pre-report.
+
+\section*{Experiments}
+\begin{itemize}
+  \item \textbf{1 \textendash{} Combinational building blocks:} half adder, full adder, 2-bit multiplier, 4-bit
+        ripple-carry adder, and a 4-bit multiplier built from shifted partial products.
+  \item \textbf{2 \textendash{} PicoBlaze soft-core:} a hex-to-7-segment decoder driven from the microcontroller
+        output port, exercising the interface between a soft processor and custom logic.
+  \item \textbf{3 \textendash{} UART:} serial communication in two steps \textendash{} (Q1) a transmitter/receiver
+        pair with a baud-rate clock divider, the transmitter loading its shift register as data plus a start bit, and
+        (Q2) a single UART module with its own transmitter and shift/enable logic.
+  \item \textbf{4 \textendash{} ChipScope in-system debug:} instantiating the Xilinx ICON/ILA cores to capture
+        internal signals on the running device through the JTAG chain, with small stimulus vectors for the capture.
+  \item \textbf{5 \textendash{} Traffic-light finite state machine:} four states implemented with a two-process FSM
+        (next-state logic plus registered state) and an output-decoding process: highway green $\rightarrow$ highway
+        yellow (after 15\,s if the street sensor is active) $\rightarrow$ street green (after 2\,s) $\rightarrow$
+        street yellow (after 5\,s or when the sensor becomes inactive) $\rightarrow$ highway green (after 2\,s), with a
+        BCD-to-7-segment driver and measured simulation results.
+\end{itemize}
+
+\section*{Verification and tools}
+Verilog-2001 with Xilinx ISE (synthesis, UCF pin/clock constraints, implementation) and ISim for simulation;
+testbenches are included for the UART and ChipScope experiments, and the FSM simulation results are documented.
+The submitted pre-reports (experiments 1\textendash 4) are part of the repository.
+
+\section*{Repository contents}
+One folder per experiment (\texttt{exp1-schematic}, \texttt{exp2-picoblaze}, \texttt{exp3-uart},
+\texttt{exp4-chipscope}, \texttt{exp5-fsm}) containing the Verilog sources, constraints, testbenches and the ISE
+project files; \texttt{reports/} with the submitted pre-reports; \texttt{docs/} with this overview. The experiment
+folders are reorganised from the original submission, so an ISE project should be pointed at the sources in the
+folder it is opened from.
+
+\section*{Skills demonstrated}
+Verilog RTL design (combinational, sequential, FSM); hierarchical design and module instantiation; soft-core
+integration (PicoBlaze); UART protocol implementation including baud-rate generation and framing; in-system debug
+with ChipScope; display drivers; testbench-based verification; the complete Xilinx ISE flow.
+\end{document}

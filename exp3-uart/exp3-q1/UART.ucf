@@ -1,0 +1,23 @@
+
+# PlanAhead Generated physical constraints 
+
+NET "in[0]" LOC = P59;
+NET "in[1]" LOC = P66;
+NET "in[2]" LOC = P58;
+NET "in[3]" LOC = P57;
+NET "in[4]" LOC = P56;
+NET "in[5]" LOC = P55;
+NET "in[6]" LOC = P48;
+NET "in[7]" LOC = P51;
+NET "RX" LOC = P119;
+NET "TX" LOC = P118;
+NET "clk" LOC = P50;
+NET "start_op" LOC = P78;
+NET "out[0]" LOC = P132;
+NET "out[1]" LOC = P131;
+NET "out[2]" LOC = P127;
+NET "out[3]" LOC = P126;
+NET "out[4]" LOC = P124;
+NET "out[5]" LOC = P123;
+NET "out[6]" LOC = P121;
+NET "out[7]" LOC = P120;

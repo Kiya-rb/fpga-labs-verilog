@@ -1,0 +1,22 @@
+
+# PlanAhead Generated physical constraints 
+NET "HighWay_TL[0]" LOC = P132;
+NET "HighWay_TL[1]" LOC = P131;
+NET "HighWay_TL[2]" LOC = P127;
+NET "Street_TL[0]" LOC = P123;
+NET "Street_TL[1]" LOC = P121;
+NET "Street_TL[2]" LOC = P120;
+NET "clk" LOC = P50;
+NET "sensor" LOC = P51;
+NET "en_7seg_HW" LOC = P46;
+NET "en_7seg_S" LOC = P45;
+NET "number[6]" LOC = P47;
+NET "number[5]" LOC = P43;
+NET "number[4]" LOC = P34;
+NET "number[3]" LOC = P40;
+NET "number[2]" LOC = P35;
+NET "number[1]" LOC = P44;
+NET "number[0]" LOC = P30;
+#Created by Constraints Editor (xc6slx9-tqg144-3) - 2022/11/14
+NET "clk" TNM_NET = clk;
+TIMESPEC TS_clk = PERIOD "clk" 3 ns HIGH 50%;
